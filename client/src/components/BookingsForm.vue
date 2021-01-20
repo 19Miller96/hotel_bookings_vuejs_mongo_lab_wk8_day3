@@ -10,11 +10,11 @@
             <input type="date" id="date" v-model="date"></input>
         </div>
         <div>
-            <label for "leave_date">Leave Date:</label>
+            <label for="leave_date">Leave Date:</label>
             <input type="date" id="date" v-model="date"></input>
         </div>
         <div class="formWrap">
-            <label for "room_number">Room Number</label>
+            <label for="room_number">Room Number:</label>
             <input type="number" id="room_number" v-model="room_number"/>
         </div>
 
