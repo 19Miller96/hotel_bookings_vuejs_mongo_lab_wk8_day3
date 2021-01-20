@@ -34,7 +34,24 @@ const createRouter = function (collection) {
     });
 
     //CREATE /api/bookings POST
+    router.post('/', (req, res) => {
+        const newData = req.body;
+        collection
+            .insertOne(newData)
+            .then((result) => {
+                res.json(result.ops[0])
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500);
+                res.json({status: 500, error: err});
+            });
+    });
+
+
     //UPDATE /api/bookings/:id PUT
+
+    
     //DELETE /api/bookings/:id DELETE
 
     return router;
