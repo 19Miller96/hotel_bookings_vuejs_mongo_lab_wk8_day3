@@ -1,4 +1,4 @@
-# hotel_checkins
+# client
 
 ## Project setup
 ```
