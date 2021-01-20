@@ -18,9 +18,21 @@ const createRouter = function (collection) {
             });
 
     });
-
-
+    
     //SHOW ONE /api/bookings/:id GET
+
+    router.get('/:id', (req,res) => {
+        const id = req.params.id;
+        collection
+            .findOne({ _id: ObjectID(id) })
+            .then((doc) => res.json(doc))
+            .catch((err) => {
+                console.error(err);
+                res.status(500);
+                res.json({status: 500, error: err});
+            });
+    });
+
     //CREATE /api/bookings POST
     //UPDATE /api/bookings/:id PUT
     //DELETE /api/bookings/:id DELETE
